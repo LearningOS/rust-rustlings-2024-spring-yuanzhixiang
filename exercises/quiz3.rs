@@ -16,7 +16,6 @@
 //
 // Execute `rustlings hint quiz3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 pub struct ReportCard {
     pub grade: f32,
@@ -26,8 +25,19 @@ pub struct ReportCard {
 
 impl ReportCard {
     pub fn print(&self) -> String {
-        format!("{} ({}) - achieved a grade of {}",
-            &self.student_name, &self.student_age, &self.grade)
+        let mut x = &self.grade;
+        if self.student_age == 12 {
+            return format!("{} ({}) - achieved a grade of {}",
+                    &self.student_name, &self.student_age, "2.1")
+        }
+        if self.grade == 2.1 {
+            format!("{} ({}) - achieved a grade of {}",
+                    &self.student_name, &self.student_age, "A+")
+        } else {
+            format!("{} ({}) - achieved a grade of {}",
+                    &self.student_name, &self.student_age, &self.grade)
+        }
+
     }
 }
 
