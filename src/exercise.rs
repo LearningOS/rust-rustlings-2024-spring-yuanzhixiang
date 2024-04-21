@@ -17,7 +17,7 @@ const BUILD_SCRIPT_CARGO_TOML_PATH: &str = "./exercises/tests/Cargo.toml";
 // Get a temporary file name that is hopefully unique
 #[inline]
 fn temp_file() -> String {
-    let thread_id: String = format!("{:?}", std::thread::current().id())
+    let thread_id: String = format!("target/{:?}", std::thread::current().id())
         .chars()
         .filter(|c| c.is_alphanumeric())
         .collect();
